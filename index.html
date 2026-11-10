@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Salted | 일상에 소금 한 꼬집</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&amp;display=swap">
+<style>
+:root{--bg:#14110f;--bg2:#1d1815;--fg:#fff;--mute:rgba(255,255,255,.7);--line:rgba(255,255,255,.14);--accent:#FFD84D;--ink:#14110f;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Noto Sans KR',-apple-system,'Apple SD Gothic Neo',sans-serif;line-height:1.6;word-break:keep-all}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font-weight:900;letter-spacing:6px;font-size:20px}
+nav{display:flex;align-items:center;gap:22px;font-size:15px;color:var(--mute)}
+.btn{display:inline-block;background:var(--accent);color:var(--ink);font-weight:900;border-radius:999px;padding:12px 24px}
+.hero{position:relative;padding:56px 0 72px;background:radial-gradient(circle at 20% 80%,rgba(255,184,80,.38),transparent 45%),radial-gradient(circle at 85% 15%,rgba(255,140,60,.26),transparent 40%)}
+h1{font-size:clamp(40px,8vw,84px);line-height:1.18;letter-spacing:-2px;margin:0 0 36px;font-weight:900}
+h1 em{font-style:normal;color:var(--accent)}
+.search{display:flex;align-items:center;gap:14px;border:2px solid rgba(255,255,255,.45);background:rgba(255,255,255,.08);border-radius:999px;padding:16px 26px;font-size:clamp(15px,2.6vw,20px);font-weight:500;max-width:640px;min-height:64px}
+.search svg{flex:none}
+.cursor{display:inline-block;width:2px;height:1.2em;background:#fff;vertical-align:middle;margin-left:3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.chips{display:flex;flex-wrap:wrap;gap:18px 14px;margin-top:48px}
+.chip{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.chip b{background:var(--accent);color:var(--ink);border-radius:999px;padding:7px 18px;font-size:16px;font-weight:900}
+.chip span{background:rgba(255,255,255,.14);border-radius:8px;padding:3px 10px;font-size:13px}
+.chip:nth-child(even){transform:translateY(14px)}
+section{padding:72px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(28px,5vw,44px);letter-spacing:-1px;line-height:1.25;margin:0 0 12px;font-weight:900}
+.lead{color:var(--mute);margin:0 0 36px;font-size:17px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:28px}
+.card h3{margin:0 0 8px;font-size:21px}
+.card p{margin:0;color:var(--mute);font-size:15px}
+.num{color:var(--accent);font-weight:900;font-size:15px;letter-spacing:2px;margin-bottom:10px}
+.meet{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid var(--line);padding:20px 4px;flex-wrap:wrap}
+.meet strong{font-size:22px}
+.meet span{color:var(--mute);font-size:15px}
+details{border-bottom:1px solid var(--line);padding:20px 4px}
+summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none}
+summary::after{content:"+";float:right;color:var(--accent)}
+details[open] summary::after{content:"−"}
+details p{color:var(--mute);margin:12px 0 0}
+.cta{background:var(--accent);color:var(--ink);text-align:center;padding:72px 24px}
+.cta h2{margin-bottom:24px}
+.cta .btn{background:var(--ink);color:#fff}
+footer{padding:36px 0;color:var(--mute);font-size:14px;text-align:center}
+@media(max-width:640px){nav a:not(.btn){display:none}}
+@media(prefers-reduced-motion:reduce){.cursor{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<a class="logo" href="#top">SALTED</a>
+<nav><a href="#about">소개</a><a href="#meetings">모임</a><a href="#how">진행 방식</a><a href="#faq">FAQ</a><a class="btn" href="#join">참여 신청</a></nav>
+</header>
+</div>
+
+<div class="hero" id="top">
+<div class="wrap">
+<h1>일상에 소금 한 꼬집,<br><em>톡 쏘는</em> 사람들</h1>
+<div class="search" aria-live="polite">
+<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+<span><span id="typed"></span><span class="cursor" aria-hidden="true"></span></span>
+</div>
+<div class="chips">
+<div class="chip"><b>보드게임 번개</b><span>퇴근 후 2시간 순삭</span></div>
+<div class="chip"><b>러닝 크루</b><span>한강 5km, 꼴찌는 커피 쏘기</span></div>
+<div class="chip"><b>와인 한 잔 토크</b><span>정답 없는 취향 수다</span></div>
+<div class="chip"><b>즉흥 여행</b><span>금요일 밤 출발, 일요일 복귀</span></div>
+<div class="chip"><b>원데이 클래스</b><span>살면서 처음 해보는 것만</span></div>
+</div>
+</div>
+</div>
+
+<section id="about"><div class="wrap">
+<h2>평범한 하루에<br>간이 딱 맞는 재미</h2>
+<p class="lead">Salted는 뻔한 모임 말고, 한 꼬집의 자극이 필요한 사람들이 모이는 커뮤니티예요.</p>
+<div class="grid">
+<div class="card"><div class="num">01</div><h3>작은 테이블, 진짜 대화</h3><p>소규모로 모여서 한 사람도 소외되지 않아요. 처음 보는 얼굴도 금방 이야기가 붙어요.</p></div>
+<div class="card"><div class="num">02</div><h3>취향이 맞는 사람들</h3><p>같은 걸 좋아하는 사람끼리 모이니까 어색함은 짧고 웃음은 길어요.</p></div>
+<div class="card"><div class="num">03</div><h3>부담은 빼고 재미만</h3><p>명함도 스펙도 필요 없어요. 오늘 하루를 조금 다르게 만들 한 꼬집이면 충분해요.</p></div>
+</div>
+</div></section>
+
+<section id="meetings"><div class="wrap">
+<h2>이번 달 모임</h2>
+<p class="lead">모임 종류와 일정은 예시예요. 실제 운영에 맞게 바꿔서 쓰세요.</p>
+<div>
+<div class="meet"><strong>보드게임 번개</strong><span>수요일 저녁 · 소규모</span></div>
+<div class="meet"><strong>러닝 크루</strong><span>토요일 아침 · 5km</span></div>
+<div class="meet"><strong>와인 한 잔 토크</strong><span>금요일 저녁 · 취향 수다</span></div>
+<div class="meet"><strong>원데이 클래스</strong><span>일요일 오후 · 처음 해보는 것</span></div>
+</div>
+</div></section>
+
+<section id="how"><div class="wrap">
+<h2>이렇게 진행돼요</h2>
+<p class="lead">신청부터 첫 모임까지 세 걸음이면 돼요.</p>
+<div class="grid">
+<div class="card"><div class="num">STEP 1</div><h3>참여 신청</h3><p>관심 있는 모임을 고르고 간단히 신청해요.</p></div>
+<div class="card"><div class="num">STEP 2</div><h3>모임 안내</h3><p>일정과 장소, 함께할 인원을 안내해 드려요.</p></div>
+<div class="card"><div class="num">STEP 3</div><h3>한 꼬집 즐기기</h3><p>편하게 와서 웃고 떠들다 가면 끝이에요.</p></div>
+</div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+<h2>자주 묻는 질문</h2>
+<p class="lead">답변은 예시예요. 실제 내용으로 바꿔주세요.</p>
+<details><summary>혼자 가도 괜찮을까요?</summary><p>대부분 혼자 오는 분들이에요. 첫 인사부터 편하게 이어지도록 진행해요.</p></details>
+<details><summary>어떤 사람들이 오나요?</summary><p>직업도 나이도 다양하지만, 새로운 재미를 찾는 마음은 같아요.</p></details>
+<details><summary>참가비는 얼마인가요?</summary><p>모임마다 달라요. 신청할 때 미리 안내해 드려요.</p></details>
+</div></section>
+
+<div class="cta" id="join">
+<h2>오늘 하루,<br>소금 한 꼬집 넣어볼래요?</h2>
+<a class="btn" href="#top">참여 신청하기</a>
+</div>
+<footer><div class="wrap">© Salted · 일상에 톡 쏘는 재미</div></footer>
+
+<script>
+(function(){
+var qs=['오늘 퇴근 후, 뻔한 저녁 말고 뭐 없나요?','처음 보는 사람들과 웃고 싶나요?','주말이 늘 비슷하게 흘러가나요?','이번 주엔 소금 한 꼬집 어때요?'];
+var el=document.getElementById('typed');
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=qs[0];return;}
+var i=0,j=0,del=false;
+function tick(){
+var s=qs[i];
+if(!del){j++;el.textContent=s.slice(0,j);if(j===s.length){del=true;return setTimeout(tick,1800);}return setTimeout(tick,70);}
+j--;el.textContent=s.slice(0,j);
+if(j===0){del=false;i=(i+1)%qs.length;return setTimeout(tick,400);}
+setTimeout(tick,30);
+}
+tick();
+})();
+</script>
+</body>
+</html>
